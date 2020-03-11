@@ -308,7 +308,7 @@ describe 'Rust grammar', ->
       expect(tokens[2]).toEqual value: ' text', scopes: ['source.rust']
 
   it 'tokenizes reserved keywords', ->
-    for t in ['abstract', 'alignof', 'become', 'do', 'final', 'macro', 'offsetof', 'override', 'priv', 'proc', 'pure', 'sizeof', 'typeof', 'virtual', 'yield']
+    for t in ['abstract', 'become', 'do', 'final', 'macro', 'override', 'priv', 'typeof', 'unsized', 'virtual', 'yield']
       {tokens} = grammar.tokenizeLine("text #{t} text")
       expect(tokens[0]).toEqual value: 'text ', scopes: ['source.rust']
       expect(tokens[1]).toEqual value: t, scopes: ['source.rust', 'invalid.deprecated.rust']
